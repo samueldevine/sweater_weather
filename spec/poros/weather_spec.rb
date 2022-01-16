@@ -1,45 +1,47 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Weather do
   describe '#initialize' do
     before :each do
       @weather = Weather.new({
-        current: {
-          dt: 1642359385,
-          sunrise: 1642342720,
-          sunset: 1642377624,
-          temp: 50.44,
-          feels_like: 45.16,
-          humidity: 45.16,
-          uvi: 0.64,
-          visibility: 10000,
-          weather: [{
-            description: 'clear sky',
-            icon: '01d'
-          }]
-        },
-        daily: [{
-          dt: 1642359385,
-          sunrise: 1642342720,
-          sunset: 1642377624,
-          temp: {
-            min: 28.98,
-            max: 44.47
-          },
-          weather: [{
-            description: 'clear sky',
-            icon: '01d'
-          }]
-        }],
-        hourly: [{
-          dt: 1642356000,
-          temp: 50.61,
-          weather: [{
-            description: 'clear sky',
-            icon: '01d'
-          }]
-        }]
-      })
+                               current: {
+                                 dt: 1_642_359_385,
+                                 sunrise: 1_642_342_720,
+                                 sunset: 1_642_377_624,
+                                 temp: 50.44,
+                                 feels_like: 45.16,
+                                 humidity: 45.16,
+                                 uvi: 0.64,
+                                 visibility: 10_000,
+                                 weather: [{
+                                   description: 'clear sky',
+                                   icon: '01d'
+                                 }]
+                               },
+                               daily: [{
+                                 dt: 1_642_359_385,
+                                 sunrise: 1_642_342_720,
+                                 sunset: 1_642_377_624,
+                                 temp: {
+                                   min: 28.98,
+                                   max: 44.47
+                                 },
+                                 weather: [{
+                                   description: 'clear sky',
+                                   icon: '01d'
+                                 }]
+                               }],
+                               hourly: [{
+                                 dt: 1_642_356_000,
+                                 temp: 50.61,
+                                 weather: [{
+                                   description: 'clear sky',
+                                   icon: '01d'
+                                 }]
+                               }]
+                             })
     end
 
     it 'exists' do

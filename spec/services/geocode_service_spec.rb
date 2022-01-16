@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe GeocodeService do
@@ -21,7 +23,7 @@ RSpec.describe GeocodeService do
       expect(response[:results].first[:locations].first[:latLng]).to have_key :lat
       expect(response[:results].first[:locations].first[:latLng][:lat]).to eq 39.738453
       expect(response[:results].first[:locations].first[:latLng]).to have_key :lng
-      expect(response[:results].first[:locations].first[:latLng][:lng]).to eq -104.984853
+      expect(response[:results].first[:locations].first[:latLng][:lng]).to eq(-104.984853)
     end
   end
 end

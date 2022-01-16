@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class GeocodeFacade
   class << self
     def get_lat_long(location)

@@ -1,23 +1,25 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Photo do
   before :each do
     @photo = Photo.new({
-      results: [
-        {
-          urls: {
-            raw: '',
-            full: ''
-          },
-          user: {
-            name: '',
-            links: {
-              html: ''
-            }
-          }
-        }
-      ]
-    }, 'denver,co')
+                         results: [
+                           {
+                             urls: {
+                               raw: '',
+                               full: ''
+                             },
+                             user: {
+                               name: '',
+                               links: {
+                                 html: ''
+                               }
+                             }
+                           }
+                         ]
+                       }, 'denver,co')
   end
 
   describe '#initialize' do

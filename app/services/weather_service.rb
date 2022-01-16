@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class WeatherService
   class << self
     def conn

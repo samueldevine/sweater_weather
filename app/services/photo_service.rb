@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PhotoService
   class << self
     def conn

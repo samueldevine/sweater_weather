@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PhotoFacade
   class << self
     def get_background(location)

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe GeocodeFacade do
@@ -10,7 +12,7 @@ RSpec.describe GeocodeFacade do
       expect(lat_long).to have_key :lat
       expect(lat_long).to have_key :lng
       expect(lat_long[:lat]).to eq 39.738453
-      expect(lat_long[:lng]).to eq -104.984853
+      expect(lat_long[:lng]).to eq(-104.984853)
     end
   end
 end

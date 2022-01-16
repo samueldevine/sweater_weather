@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class GeocodeService
   class << self
     def conn
@@ -9,7 +11,7 @@ class GeocodeService
     end
 
     def get_lat_long(location)
-      parse_json('address', {key: ENV['mapquest_api_key'], location: location})
+      parse_json('address', { key: ENV['mapquest_api_key'], location: location })
     end
   end
 end
