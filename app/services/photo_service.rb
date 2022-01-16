@@ -17,8 +17,6 @@ class PhotoService
         per_page: 1
       }
       headers = {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
         'Accept-Version': 'v1'
       }
 
