@@ -4,8 +4,8 @@ module Api
   module V1
     class ForecastsController < ApplicationController
       def show
-        lat_long = GeocodeFacade.get_lat_long(params[:location])
-        forecast = WeatherFacade.get_weather_data(lat_long[:lat], lat_long[:lng])
+        coordinates = MapFacade.get_coordinates(params[:location])
+        forecast = WeatherFacade.get_weather_data(coordinates[:lat], coordinates[:lng])
 
         render json: WeatherSerializer.new(forecast)
       end
