@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RoadtripFacade < MapFacade
   class << self
     def create_roadtrip(origin, desitination)

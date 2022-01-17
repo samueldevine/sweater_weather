@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'Login', type: :request do
@@ -29,7 +31,7 @@ RSpec.describe 'Login', type: :request do
 
         expect(body).to have_key :data
         expect(body[:data]).to have_key :type
-        expect(body[:data][:type]).to eq "user"
+        expect(body[:data][:type]).to eq 'user'
         expect(body[:data]).to have_key :id
         expect(body[:data][:attributes]).to have_key :email
         expect(body[:data][:attributes][:email]).to eq 'user_1@gmail.com'
@@ -42,7 +44,7 @@ RSpec.describe 'Login', type: :request do
     end
 
     describe 'unsuccessful request' do
-      it "returns an unsuccessful status code and an error message", :vcr do
+      it 'returns an unsuccessful status code and an error message', :vcr do
         params = {
           email: 'user_1@gmail.com',
           password: 'wrong_password'
@@ -51,7 +53,7 @@ RSpec.describe 'Login', type: :request do
 
         expect(response).to_not be_successful
         expect(response.status).to eq 403
-        expect(response.content_type).to eq("application/json")
+        expect(response.content_type).to eq('application/json')
 
         body = JSON.parse(response.body, symbolize_names: true)
 

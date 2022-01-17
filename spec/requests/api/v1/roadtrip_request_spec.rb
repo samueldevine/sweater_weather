@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'Roadtrip', type: :request do
@@ -15,7 +17,7 @@ RSpec.describe 'Roadtrip', type: :request do
         )
       end
 
-      it "returns the trip information and weather upon arrival", :vcr do
+      it 'returns the trip information and weather upon arrival', :vcr do
         params = {
           origin: 'Denver, CO',
           desitination: 'Estes Park, CO',
@@ -23,7 +25,7 @@ RSpec.describe 'Roadtrip', type: :request do
         }
         post '/api/v1/road_trip', params: params.to_json, headers: @headers
 
-        expect(response.content_type).to eq("application/json")
+        expect(response.content_type).to eq('application/json')
         expect(response.status).to eq 200
 
         body = JSON.parse(response.body, symbolize_names: true)

@@ -1,19 +1,25 @@
-class Api::V1::RoadtripsController < ApplicationController
-  before_action :authenticate
+# frozen_string_literal: true
 
-  def create
-    new_road_trip = RoadtripFacade.create_roadtrip(params[:origin], params[:desitination])
+module Api
+  module V1
+    class RoadtripsController < ApplicationController
+      before_action :authenticate
 
-    render json: RoadtripSerializer.new(new_road_trip)
-  end
+      def create
+        new_road_trip = RoadtripFacade.create_roadtrip(params[:origin], params[:desitination])
 
-  private
-  def road_trip_params
-    params.permit(:origin, :desitination, :api_key)
-  end
+        render json: RoadtripSerializer.new(new_road_trip)
+      end
 
-  def authenticate
-    binding.pry
-    User.where(api_key: params[:api_key]).any?
+      private
+
+      def road_trip_params
+        params.permit(:origin, :desitination, :api_key)
+      end
+
+      def authenticate
+        User.where(api_key: params[:api_key]).any?
+      end
+    end
   end
 end

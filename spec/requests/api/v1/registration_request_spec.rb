@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'Registration', type: :request do
@@ -18,14 +20,14 @@ RSpec.describe 'Registration', type: :request do
         }
         post '/api/v1/users', params: params.to_json, headers: @headers
 
-        expect(response.content_type).to eq("application/json")
+        expect(response.content_type).to eq('application/json')
         expect(response.status).to eq 201
 
         body = JSON.parse(response.body, symbolize_names: true)
 
         expect(body).to have_key :data
         expect(body[:data]).to have_key :type
-        expect(body[:data][:type]).to eq "user"
+        expect(body[:data][:type]).to eq 'user'
         expect(body[:data]).to have_key :id
         expect(body[:data][:attributes]).to have_key :email
         expect(body[:data][:attributes][:email]).to eq 'user_1@gmail.com'
@@ -43,7 +45,7 @@ RSpec.describe 'Registration', type: :request do
         }
         post '/api/v1/users', params: params.to_json, headers: @headers
 
-        expect(response.content_type).to eq("application/json")
+        expect(response.content_type).to eq('application/json')
         expect(response.status).to eq 201
 
         body = JSON.parse(response.body, symbolize_names: true)
@@ -71,7 +73,7 @@ RSpec.describe 'Registration', type: :request do
 
         expect(response).to_not be_successful
         expect(response.status).to eq 400
-        expect(response.content_type).to eq("application/json")
+        expect(response.content_type).to eq('application/json')
 
         body = JSON.parse(response.body, symbolize_names: true)
 
@@ -80,7 +82,7 @@ RSpec.describe 'Registration', type: :request do
         expect(body[:errors][:detail]).to eq ["Password confirmation doesn't match Password"]
       end
 
-      it "returns an error if email is not unique", :vcr do
+      it 'returns an error if email is not unique', :vcr do
         user = User.create!(
           email: 'user_1@gmail.com',
           password: 'user_1',
@@ -95,16 +97,16 @@ RSpec.describe 'Registration', type: :request do
 
         expect(response).to_not be_successful
         expect(response.status).to eq 400
-        expect(response.content_type).to eq("application/json")
+        expect(response.content_type).to eq('application/json')
 
         body = JSON.parse(response.body, symbolize_names: true)
 
         expect(body).to have_key :errors
         expect(body[:errors]).to have_key :detail
-        expect(body[:errors][:detail]).to eq ["Email has already been taken"]
+        expect(body[:errors][:detail]).to eq ['Email has already been taken']
       end
 
-      it "returns an error if a field is missing", :vcr do
+      it 'returns an error if a field is missing', :vcr do
         params = {
           email: '',
           password: 'password',
@@ -114,7 +116,7 @@ RSpec.describe 'Registration', type: :request do
 
         expect(response).to_not be_successful
         expect(response.status).to eq 400
-        expect(response.content_type).to eq("application/json")
+        expect(response.content_type).to eq('application/json')
 
         body = JSON.parse(response.body, symbolize_names: true)
 
