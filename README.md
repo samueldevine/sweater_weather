@@ -1,3 +1,5 @@
+![Ruby](https://img.shields.io/badge/Ruby-v2.7.2-red) ![Rails](https://img.shields.io/badge/Rails-v5.2.6-red) ![bcrypt](https://img.shields.io/badge/bcrypt-3.1.7-red)
+
 # README
 
 ### Description
