@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Forecast', type: :request do
-  describe 'GET /forecast' do
+  describe 'GET /api/v1/forecast' do
     it 'returns current weather data, and hourly and daily forecasts', :vcr do
       get '/api/v1/forecast',
           params: {

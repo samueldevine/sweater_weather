@@ -2,17 +2,17 @@
 
 require 'rails_helper'
 
-RSpec.describe GeocodeService do
+RSpec.describe MapService do
   describe '::conn' do
     it 'creates a Faraday connection' do
-      expect(GeocodeService.conn).to be_a Faraday::Connection
+      expect(MapService.conn).to be_a Faraday::Connection
     end
   end
 
-  describe '::get_lat_long', :vcr do
+  describe '::get_coordinates', :vcr do
     it 'returns parsed latitude and longitude for a given location' do
       location_1 = 'Denver, CO'
-      response = GeocodeService.get_lat_long(location_1)
+      response = MapService.get_coordinates(location_1)
 
       expect(response).to be_a Hash
       expect(response).to have_key :results
