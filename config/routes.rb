@@ -9,6 +9,8 @@ Rails.application.routes.draw do
       post '/users',      to: 'users#create'
       post '/sessions',   to: 'sessions#create'
       post '/road_trip',  to: 'roadtrips#create'
+
+      get '/book-search', to: 'books#index'
     end
   end
 end
