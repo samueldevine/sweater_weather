@@ -28,7 +28,6 @@ RSpec.describe 'Books Search' do
       expect(payload[:data][:attributes][:books]).to be_an Array
       expect(payload[:data][:attributes][:books].length).to eq 5
 
-      # binding.pry
       payload[:data][:attributes][:books].each do |book|
         expect(book[:isbn]).to be_an Array
         expect(book[:title]).to be_a String
