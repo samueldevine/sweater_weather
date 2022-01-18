@@ -1,17 +1,19 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'Books Search' do
   describe 'GET /api/v1/book-search' do
     it 'returns current weather information and books that match the search', :vcr do
       get '/api/v1/book-search',
-        params: {
-          location: 'Denver,CO',
-          quantity: 5
-        },
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        }
+          params: {
+            location: 'Denver,CO',
+            quantity: 5
+          },
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          }
 
       expect(response).to be_successful
 

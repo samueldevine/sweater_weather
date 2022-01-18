@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe BooksForecast do
@@ -6,11 +8,11 @@ RSpec.describe BooksForecast do
       @books_data = {
         total_books_found: 200,
         books: [
-          Book.new({isbn: ['1234567890123'], title: 'A', publisher: ['XYZ']}),
-          Book.new({isbn: ['1232345789023'], title: 'B', publisher: ['XYZ']}),
-          Book.new({isbn: ['1234509439012'], title: 'C', publisher: ['XYZ']}),
-          Book.new({isbn: ['1234376845658'], title: 'D', publisher: ['XYZ']}),
-          Book.new({isbn: ['1234237652361'], title: 'E', publisher: ['XYZ']})
+          Book.new({ isbn: ['1234567890123'], title: 'A', publisher: ['XYZ'] }),
+          Book.new({ isbn: ['1232345789023'], title: 'B', publisher: ['XYZ'] }),
+          Book.new({ isbn: ['1234509439012'], title: 'C', publisher: ['XYZ'] }),
+          Book.new({ isbn: ['1234376845658'], title: 'D', publisher: ['XYZ'] }),
+          Book.new({ isbn: ['1234237652361'], title: 'E', publisher: ['XYZ'] })
         ]
       }
       @forecast_data = {

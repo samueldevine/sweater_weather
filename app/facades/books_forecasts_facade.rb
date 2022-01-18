@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BooksForecastsFacade
   class << self
     def get_books(location, quantity)

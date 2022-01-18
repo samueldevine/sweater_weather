@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BooksForecast
   attr_reader :id,
               :destination,
