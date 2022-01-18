@@ -6,7 +6,7 @@ module Api
       before_action :authenticate
 
       def create
-        new_road_trip = RoadtripFacade.create_roadtrip(params[:origin], params[:desitination])
+        new_road_trip = RoadtripFacade.create_roadtrip(params[:origin], params[:destination])
 
         render json: RoadtripSerializer.new(new_road_trip)
       end
@@ -14,7 +14,9 @@ module Api
       private
 
       def authenticate
-        User.where(api_key: params[:api_key]).any?
+        unless User.where(api_key: params[:api_key]).any?
+          render json: ErrorSerializer.serialize('Unauthorized'), status: 401
+        end
       end
     end
   end

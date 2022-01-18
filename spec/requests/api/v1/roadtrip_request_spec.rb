@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Roadtrip', type: :request do
+RSpec.describe 'Roadtrip Request', type: :request do
   describe 'POST /api/v1/road_trip' do
     describe 'successful request' do
       before :each do
@@ -20,7 +20,7 @@ RSpec.describe 'Roadtrip', type: :request do
       it 'returns the trip information and weather upon arrival', :vcr do
         params = {
           origin: 'Denver, CO',
-          desitination: 'Estes Park, CO',
+          destination: 'Estes Park, CO',
           api_key: @user.api_key
         }
         post '/api/v1/road_trip', params: params.to_json, headers: @headers
@@ -59,7 +59,7 @@ RSpec.describe 'Roadtrip', type: :request do
       it 'does not return weather or travel time if the trip is impossible', :vcr do
         params = {
           origin: 'New York, NY',
-          desitination: 'London, UK',
+          destination: 'London, UK',
           api_key: @user.api_key
         }
         post '/api/v1/road_trip', params: params.to_json, headers: @headers
@@ -78,6 +78,22 @@ RSpec.describe 'Roadtrip', type: :request do
         expect(body[:data][:attributes]).to have_key :end_city
         expect(body[:data][:attributes][:travel_time]).to eq 'impossible'
         expect(body[:data][:attributes][:weather_at_eta]).to eq({})
+      end
+
+      it 'returns a 401 status if no api key is provided', :vcr do
+        params = {
+          origin: 'Denver, CO',
+          destination: 'Estes Park, CO'
+        }
+        post '/api/v1/road_trip', params: params.to_json, headers: @headers
+
+        expect(response.content_type).to eq('application/json')
+        expect(response.status).to eq 401
+
+        body = JSON.parse(response.body, symbolize_names: true)
+
+        expect(body).to have_key :errors
+        expect(body[:errors][:detail]).to eq 'Unauthorized'
       end
     end
   end

@@ -14,8 +14,8 @@ class MapService
       parse_json('geocoding/v1/address', { key: ENV['mapquest_api_key'], location: location })
     end
 
-    def get_travel_time(origin, desitination)
-      parse_json('directions/v2/route', { key: ENV['mapquest_api_key'], from: origin, to: desitination })
+    def get_travel_time(origin, destination)
+      parse_json('directions/v2/route', { key: ENV['mapquest_api_key'], from: origin, to: destination })
     end
   end
 end

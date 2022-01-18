@@ -10,7 +10,7 @@ class Roadtrip
   def initialize(data)
     @id             = 'null'
     @start_city     = data[:origin]
-    @end_city       = data[:desitination]
+    @end_city       = data[:destination]
     @travel_time    = format_time(data[:travel_time])
     @weather_at_eta = data[:weather_at_eta]
   end

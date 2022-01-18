@@ -10,7 +10,7 @@ class RoadtripFacade < MapFacade
         travel_time = 'impossible'
         roadtrip_data = {
           origin: origin,
-          desitination: destination,
+          destination: destination,
           travel_time: travel_time,
           weather_at_eta: {
           }
@@ -21,7 +21,7 @@ class RoadtripFacade < MapFacade
         weather_at_eta = weather.hourly_weather[travel_time_hrs]
         roadtrip_data = {
           origin: origin,
-          desitination: destination,
+          destination: destination,
           travel_time: travel_time,
           weather_at_eta: {
             temperature: weather_at_eta[:temperature],

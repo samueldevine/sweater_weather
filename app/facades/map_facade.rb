@@ -6,8 +6,8 @@ class MapFacade
       MapService.get_coordinates(location)[:results].first[:locations].first[:latLng]
     end
 
-    def get_travel_time(origin, desitination)
-      MapService.get_travel_time(origin, desitination)[:route][:time]
+    def get_travel_time(origin, destination)
+      MapService.get_travel_time(origin, destination)[:route][:time]
     end
   end
 end

@@ -7,7 +7,7 @@ RSpec.describe Roadtrip do
     @roadtrip = Roadtrip.new(
       {
         origin: 'Denver, CO',
-        desitination: 'Estes Park, CO',
+        destination: 'Estes Park, CO',
         travel_time: 7200,
         weather_at_eta: {
           temperature: 75.0,
