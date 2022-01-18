@@ -4,13 +4,13 @@ class Book
               :publisher
 
   def initialize(data)
-    @title = data[:title]
-    @publisher = data[:publisher]
-
     if data[:isbn]
-      @isbn = data[:isbn]
+      @isbn    = data[:isbn]
     else
-      @isbn = ['isbn unavailable for this book']
+      @isbn    = ['isbn unavailable for this book']
     end
+
+    @title     = data[:title]
+    @publisher = data[:publisher]
   end
 end
