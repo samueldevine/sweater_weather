@@ -13,10 +13,6 @@ module Api
 
       private
 
-      def road_trip_params
-        params.permit(:origin, :desitination, :api_key)
-      end
-
       def authenticate
         User.where(api_key: params[:api_key]).any?
       end
