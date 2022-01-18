@@ -1,7 +1,7 @@
-class BookForecastFacade
+class BooksForecastsFacade
   class << self
     def get_books(location, quantity)
-      payload = BookService.get_books(location)
+      payload = BooksService.get_books(location)
 
       books_arr = payload[:docs][0..(quantity.to_i - 1)].map do |book|
         Book.new(book)

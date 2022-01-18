@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe BookForecastFacade do
+RSpec.describe BooksForecastsFacade do
   describe '::get_books', :vcr do
     it 'retrives a list of book objects that match the search param' do
       location = 'Denver,CO'
       quantity = 5
-      payload = BookFacade.get_books(location, quantity)
+      payload = BooksForecastsFacade.get_books(location, quantity)
 
       expect(payload).to have_key :total_books_found
       expect(payload[:books]).to be_an Array

@@ -1,4 +1,4 @@
-class BookService
+class BooksService
   class << self
     def conn
       Faraday.new('http://openlibrary.org/')

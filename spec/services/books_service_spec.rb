@@ -1,15 +1,15 @@
 require 'rails_helper'
 
-RSpec.describe BookService do
+RSpec.describe BooksService do
   describe '::conn' do
     it 'creates a Faraday connection' do
-      expect(BookService.conn).to be_a Faraday::Connection
+      expect(BooksService.conn).to be_a Faraday::Connection
     end
   end
 
   describe '::get_books', :vcr do
     it 'returns all books with titles matching the query' do
-      payload = BookService.get_books('Denver,CO')
+      payload = BooksService.get_books('Denver,CO')
 
       expect(payload).to be_a Hash
       expect(payload).to have_key :numFound

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       post '/sessions',   to: 'sessions#create'
       post '/road_trip',  to: 'roadtrips#create'
 
-      get '/book-search', to: 'books#index'
+      get '/book-search', to: 'books_forecasts#index'
     end
   end
 end
