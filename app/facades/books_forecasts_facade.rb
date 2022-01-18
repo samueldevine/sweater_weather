@@ -29,7 +29,7 @@ class BooksForecastsFacade
       books_data = get_books(location, quantity)
       forecast_data = get_forecast(location)
 
-      BookForecast.new(books_data, forecast_data)
+      BooksForecast.new(books_data, forecast_data)
     end
   end
 end

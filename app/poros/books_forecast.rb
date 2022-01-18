@@ -1,4 +1,4 @@
-class BookForecast
+class BooksForecast
   attr_reader :id,
               :destination,
               :forecast,
