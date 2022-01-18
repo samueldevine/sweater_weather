@@ -16,6 +16,8 @@ class Roadtrip
   end
 
   def format_time(time_in_secs)
+    return time_in_secs if time_in_secs.class == String
+
     time_str = Time.at(time_in_secs).utc.strftime('%H hours, %M minutes')
     times = time_str.split(', ')
 
