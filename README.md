@@ -1,4 +1,4 @@
-![Ruby](https://img.shields.io/badge/Ruby-v2.7.2-red) ![Rails](https://img.shields.io/badge/Rails-v5.2.6-red)
+![Ruby](https://img.shields.io/badge/Ruby-2.7.2-red) ![Rails](https://img.shields.io/badge/Rails-5.2.6-red) ![api](https://img.shields.io/badge/api-v1-success)
 
 Hi, welcome to Sweater Weather! I developed this API independently during my time at Turing's Backend Software Engineering program. The learning goals for this project were as follows:
 
