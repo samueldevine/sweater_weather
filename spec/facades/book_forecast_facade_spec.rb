@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe BookFacade do
+RSpec.describe BookForecastFacade do
   describe '::get_books', :vcr do
     it 'retrives a list of book objects that match the search param' do
       location = 'Denver,CO'
