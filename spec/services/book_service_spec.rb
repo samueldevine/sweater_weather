@@ -17,7 +17,7 @@ RSpec.describe BookService do
       expect(payload[:docs].length).to eq payload[:numFound]
 
       # skipping the first book in my test because no isbn is listed.
-      # will add some logic to account for this possibility in my facade
+      # will add some logic to account for this possibility in my book poro
       payload[:docs][1..5].each do |book|
         expect(book).to have_key :isbn
         expect(book).to have_key :title
