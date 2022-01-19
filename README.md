@@ -102,31 +102,13 @@ Example Response:
                     "icon": "13d"
                 },
                 {
-                    "date": "2022-01-20",
-                    "sunrise": "2022-01-20 07:16:43 -0700",
-                    "sunset": "2022-01-20 17:04:54 -0700",
-                    "max_temp": 38.79,
-                    "min_temp": 24.49,
-                    "conditions": "clear sky",
-                    "icon": "01d"
+                    ...
                 },
                 {
-                    "date": "2022-01-21",
-                    "sunrise": "2022-01-21 07:16:09 -0700",
-                    "sunset": "2022-01-21 17:06:03 -0700",
-                    "max_temp": 35.53,
-                    "min_temp": 31.5,
-                    "conditions": "light snow",
-                    "icon": "13d"
+                    ...
                 },
                 {
-                    "date": "2022-01-22",
-                    "sunrise": "2022-01-22 07:15:33 -0700",
-                    "sunset": "2022-01-22 17:07:13 -0700",
-                    "max_temp": 38.44,
-                    "min_temp": 28.58,
-                    "conditions": "few clouds",
-                    "icon": "02d"
+                    ...
                 }
             ],
             "hourly_weather": [
@@ -143,41 +125,12 @@ Example Response:
                     "icon": "04d"
                 },
                 {
-                    "time": "16:00:00",
-                    "temperature": 50.5,
-                    "conditions": "overcast clouds",
-                    "icon": "04d"
+                    ...
                 },
                 {
-                    "time": "17:00:00",
-                    "temperature": 48.6,
-                    "conditions": "overcast clouds",
-                    "icon": "04d"
+                    ...
                 },
-                {
-                    "time": "18:00:00",
-                    "temperature": 46.29,
-                    "conditions": "overcast clouds",
-                    "icon": "04n"
-                },
-                {
-                    "time": "19:00:00",
-                    "temperature": 42.46,
-                    "conditions": "broken clouds",
-                    "icon": "04n"
-                },
-                {
-                    "time": "20:00:00",
-                    "temperature": 38.95,
-                    "conditions": "scattered clouds",
-                    "icon": "03n"
-                },
-                {
-                    "time": "21:00:00",
-                    "temperature": 38.37,
-                    "conditions": "scattered clouds",
-                    "icon": "03n"
-                }
+                ...
             ]
         }
     }
